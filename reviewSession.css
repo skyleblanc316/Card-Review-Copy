@@ -1,0 +1,113 @@
+body {
+	color: #0041CA;
+	background-color: white;
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	background-color: #0041CA;
+	color: white;
+	width: 75%;
+	padding: 3em 0;
+	font-size: 26px;
+}
+
+.question, .answer {
+	border-radius: 0.5em;
+}
+
+.question {
+	margin-bottom: 1em;
+}
+
+.answer, .answer-heading {
+	visibility: hidden;
+}
+
+.answer {
+	margin-bottom: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.progress {
+	float: left; 
+	margin-top: 1%; 
+	color: white;
+}
+
+.question-div {
+	clear: both; 
+	width: 70%; 
+	margin: auto;
+}
+
+.accuracy-style{
+	float: right;
+	margin-top: 1%; 
+	color: white;
+}
+
+/* .new-old-cards {
+	float: right;  
+	margin-top: 1%; 
+	color: white;
+} */
+
+.pause-button-div {
+	text-align: right;
+}
+
+.pause-button {
+	color: white;
+	width: 15%; 
+	border: none;
+	border-radius: 0.3em;
+	padding: 0.4em; 
+	font-size: 1rem;
+	background-color: #12a5da;
+	cursor: pointer;
+	margin: 0.3em;
+}
+
+.pause-button:hover, .reveal-button:hover,
+	.correct-button:hover, .incorrect-button:hover {
+	opacity: 80%;
+}
+
+.pause-button:active, .reveal-button:active,
+	.correct-button:active, .incorrect-button:active {
+	opacity: 50%;
+}
+
+.correct-button, .incorrect-button, .reveal-button {
+	padding: 15px;
+    width: 25%;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+	cursor: pointer;
+}
+
+.reveal-button {
+	color: white;
+    background-color: #12a5da;
+	cursor: pointer;
+	border-radius: 0.3em;
+}
+
+.correct-button, .incorrect-button {
+	margin-bottom: 1em;
+	border-radius: 1em;
+}
+
+.correct-button {
+    background-color: #0eaf29;
+	margin-right: 0.5em;
+}
+
+.incorrect-button {
+	background-color: #f44336;
+	margin-left: 0.5em;
+}

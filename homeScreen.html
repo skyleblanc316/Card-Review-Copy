@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Home Screen</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"/>
+        <link rel="stylesheet" href="homeScreen.css">
+    </head>
+    <script>//security feature to disable debug menu hot keys
+      document.onkeydown = function(e) {//this funciton disables the pressing of specific keys based on their respective keycode
+        if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||//disables 'ctrl + shift + I'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||  //disables 'ctrl + shift + c'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 74) || //disables 'ctrl + shift + j'
+              e.keyCode === 123) {//disables f12
+                  return false;
+              }
+      };
+    </script>
+    <body oncontextmenu="return false;"> <!-- the value added to body tag disables right click -->
+      <div class="appName">
+        <div class="title">Dorki <span class="acronym">(doing online really kool information)</span></div>
+        <button class="logoutButton" type = "button" id ="logoutButton">Logout</button>
+      </div>
+      <script type="module" src="./homeScreen.js"></script>
+      <div id = "deleteArea" class="delete-area">
+        <input type="checkbox" id="selectAll" name="selectAll" class="select-checkmark">
+        <label for="selectAll" class="select-all">Select All</label>
+        <button type="button" id = "deleteDeck" class="delete-button"
+          style="visibility: hidden;">Delete</button>
+      </div>
+      <ul class="deck-list" id = "DeckList"></ul>
+      <section id="afterDeck">
+        <form class="create-deck-section" id = "createDeckSection">
+          <p id="warningMessage" class="warning-message"></p>
+          <div class="deck-name-and-input">
+            <label class="deck-name-label">Deck Name</label>
+            <input type="text" id="DeckName" class="deck-name-input">
+          </div>
+          <div class="deck-create-and-cancel-button-row">
+            <button type="submit" id = "CreateDeck" class="create-deck-button">Create Deck</button>
+            <button type = "button" id = "Cancel" class="cancel-button">Cancel</button>
+          </div>
+        </form>       
+      </section>
+    </body>
+</html>

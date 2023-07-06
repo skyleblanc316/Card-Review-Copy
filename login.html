@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Login page</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"/>
+        <link rel="stylesheet" href="login.css">
+    </head>
+    <script>//security feature to disable debug menu hot keys
+      document.onkeydown = function(e) {//this funciton disables the pressing of specific keys based on their respective keycode
+              if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||//disables 'ctrl + shift + I'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||  //disables 'ctrl + shift + c'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 74) || //disables 'ctrl + shift + j'
+              e.keyCode === 123) {//disables f12
+                  return false;
+              }
+      };
+    </script>
+    <body oncontextmenu="return false;"> <!-- the value added to body tag disables right click -->
+      <script type="module" src="./login.js"></script>
+        <section id="loginpage">
+            <p class="intro">introducing...</p>
+            <h1 class="title">Dorki</h1>
+            <h2 class="sign-in-message">Sign into your account</h2>
+            <section class="loginBox">
+              <form id="login">
+                <p id="warningMessage"></p>
+                <div class="username-entry">
+                  <label class="username-label">Username</label>
+                  <input class="username-input" type="text" id="username">
+                </div>
+                
+                <div class="password-entry">
+                  <label class="password-label">Password</label>
+                  <input class="password-input" type="password" id="password">
+                </div>
+                
+                <button type="submit" class="loginButton">Login</button>
+              </form>
+              <br />
+              <form id="createAccount">
+                No account?
+                <a class="create-account-message" href = "./createAccount.html">Create an account</a>
+              </form>
+            
+            </section>
+        </section>
+    </body>
+</html>

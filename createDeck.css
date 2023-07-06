@@ -1,0 +1,32 @@
+body {
+	background-color: #0041CA;
+	color: white;
+	text-align: center;
+}
+
+form {
+	margin: 0 auto;
+	color: black;
+	text-align: auto;
+	max-width: 275px;
+	max-height: 450px;
+	background-color: white;
+	border-radius: 10px;            
+}
+
+.createDeckButton {
+	width: 35%;
+	background-color:#0041CA;
+	color: white;
+	border-radius: 12px;
+	border: #0041CA;
+	padding: 8px;
+}
+
+.cancelButton{
+	width: 35%
+}
+
+.createAccount {
+	padding: 15px;  
+}

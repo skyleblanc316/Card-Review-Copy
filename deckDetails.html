@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8" />
+      <title>Deck Details</title>
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"/>
+      <link rel="stylesheet" href="deckDetails.css">
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script>//security feature to disable debug menu hot keys
+        document.onkeydown = function(e) {//this funciton disables the pressing of specific keys based on their respective keycode
+          if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||//disables 'ctrl + shift + I'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||  //disables 'ctrl + shift + c'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 74) || //disables 'ctrl + shift + j'
+              e.keyCode === 123) {//disables f12
+                  return false;
+              }
+        };
+      </script>
+  </head>
+  <body oncontextmenu="return false;"> <!-- the value added to body tag disables right click -->
+    <script type="module" src="./deckDetails.js"></script>
+    <!-- App Name -->
+    <div class="appName">
+      <div class="title">Dorki </div>
+      <button class="logoutButton" type = "button" id ="logoutButton">Logout</button>
+    </div>
+
+    <!-- Side Bar + Tabs -->
+    <div class="sidebar-and-content-area">
+      <div class="sidebar">
+        <div>
+          <button class ="start-review-button" type = "button" id = "startReview">Start Review</button>
+        </div>
+        <a href="#summary" id = "SummaryTab">Summary</a>
+        <a href="#flashcards" id = "FlashcardsTab" class="flashcards-tab">
+          Flashcards
+          <!-- Tool tip will appear if deck has no flashcards -->
+          <div>
+            <span class="tooltiptext" id="tipNoFlashcards" style="visibility: hidden;">
+              <button type ="button" id = "closeTipNoFlashcard" class="closeToolTip">X</button>
+              No flashcards. Click here to add flashcards.
+            </span>
+          </div>
+        </a>
+        <a href="#settings" id = "SettingsTab">Settings</a>
+      </div>
+
+      <!-- Displays the content of the Tabs -->
+      <section class = "contentAreaStyle">
+        <div class = "deckTitle">
+          <a href="./homeScreen.html">Home</a>
+          <!-- <button type="button" class = "home-button" onclick="window.location.href = './homeScreen.html'">Home</button> -->
+          <span id="deckTitle" class="deck-title-style"></span>
+        </div>
+        <!-- Display content for Summary tab -->
+        <section id = "summaryContent">
+          <div id="barchart_values" class="bar-chart"></div>
+        </section>
+        <!-- Display content for Flashcards tab -->
+        <section id="flashcardContent" style = "display: none;">
+          <div id = "deleteArea" class="delete-area">
+            <input type="checkbox" class="select-all-checkbox" id="selectAll" name="selectAll">
+            <label for="selectAll" class="select-all">Select All</label>
+            <button type="button" id = "deleteFlashcard" class="delete-button">Delete</button>
+          </div>
+          <div class="flashcard-list" id = "FlashcardList"></div>
+          <section id="afterContent" class="after-content"></section>
+          <div class="new-card-window" id="new-card-window">
+            <!-- <script type="module" src="./newCard.js"></script> -->
+            <h3 class="new-card-window-title">New Card</h3>
+            <label class="front-label">Front</label>
+            <input id="cardFront" class="card-front-input" type="text" placeholder="Enter the flashcard prompt"></textarea>  
+            <label class="back-label">Back</label>
+            <input id="cardBack" class="card-back-input" type="text" placeholder="Enter the flashcard answer"></textarea>
+            <div class="button-row">
+              <button type="button" id = "createFlashcard" class="create-flashcard-button">Create Flashcard</button>
+              <button type = "button" id = "cancelButton" class="cancel-button">Cancel</button>
+            </div>
+          </div>
+      </section>
+
+      <!-- Display content for Settings tab -->
+      <section id = "settingsContent" style="display: none;" 
+        class="settings-tab-content">
+        <div class="deck-name-edit-row">
+          <label for="editDeckName">Deck Name</label>
+          <input type="text" id="editDeckName" name="editDeckName">
+        </div>
+        <div class="dropdown">
+          <label for="reviewTypeOptions">Review Type</label>
+          <select id = "reviewTypeOptions">
+            <option id = "Daily">Daily</option>
+            <option id = "Continuous">Continuous</option>
+          </select>
+        </div>
+        <div class="dropdown">
+          <label for="orderTypeOptions">Order Type</label>
+          <select id = "orderTypeOptions">
+            <option id = "Random">Random</option>
+            <option id = "Low to High">Low to High</option>
+          </select>
+        </div>
+        <div class="dropdown">
+          <label for="reviewBurnedCards">Review Burned Cards</label>
+          <select id = "reviewBurnedCards">
+            <option id = "reviewBurned">Yes</option>
+            <option id = "noReviewBurned">No</option>
+          </select>
+        </div>
+        <div class="max-flashcard-level-edit-row">
+          <label for="editMaxFlashcardLevel">Maximum Flashcard Level</label>
+          <input type="text" id="editMaxFlashcardLevel" 
+            name="editMaxFlashcardLevel" class="edit-max-level">  
+        </div>
+        <div class = "num-new-cards" id = "editNewCardsArea">
+          <label for="editNumNewCards">Number of New Cards Per Day</label>
+          <input type="text" id="editNumNewCards" name="editDeckName" class="edit-new-cards">
+        </div>
+        <div class="edit-settings-button-row" id="editSettingsButtonRow">
+          <button type = "button" id="editSettingsButton" class = "edit-settings-button">Edit</button>
+        </div>
+        <section class = "save-and-cancel-buttons-row">
+          <button type = "button" id="saveSettingButton" class="save-settings-button">Save</button>
+          <button type = "button" id="cancelSettingButton" class="cancel-settings-button">Cancel</button>  
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

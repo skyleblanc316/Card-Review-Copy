@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>New Card</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"/>
+        <style src = "./style.css">
+          body {
+            background-color: white;
+            color: #0041CA;
+            text-align: center;
+          }
+          form {
+            margin: 0 auto;
+            color: white;
+            text-align: auto;
+            max-width: 75%;
+            padding: 4px;
+            background-color: #0041CA;           
+          }
+          h2 {
+            color: black;
+          }
+          input {
+            height: 250px;
+            width: 75%;
+            text-align: center;
+            font-size: 26px;
+          }
+          button {
+            color: white;
+            background-color: #0041CA;
+            border: white;
+            padding: 8px;
+          }
+
+
+        </style>
+    </head>
+    <script>//security feature to disable debug menu hot keys
+      document.onkeydown = function(e) {//this funciton disables the pressing of specific keys based on their respective keycode
+        if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||//disables 'ctrl + shift + I'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||  //disables 'ctrl + shift + c'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 74) || //disables 'ctrl + shift + j'
+              e.keyCode === 123) {//disables f12
+                  return false;
+              }
+      };
+    </script>
+    <body oncontextmenu="return false;"> <!-- the value added to body tag disables right click -->
+      <script type="module" src="./newCard.js"></script>
+      <h2>New Card</h2>
+      <form>Front</form>
+      <input id="cardFront" type="text" size="100" placeholder="Enter the flashcard prompt">
+      </br>
+      </br>
+      <form>Back</form>
+      <input id="cardBack" type="text" size="100" placeholder="Enter the flashcard prompt">
+      </br>
+      </br>
+      <button type="button" id = "createFlashcard">Create Flashcard</button>
+    </body>
+</html>

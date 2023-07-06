@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Finished Review</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"/>
+    <link rel="stylesheet" href="finishedReview.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  </head>
+  <script>//security feature to disable debug menu hot keys
+    document.onkeydown = function(e) {//this funciton disables the pressing of specific keys based on their respective keycode
+      if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||//disables 'ctrl + shift + I'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||  //disables 'ctrl + shift + c'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 74) || //disables 'ctrl + shift + j'
+              e.keyCode === 123) {//disables f12
+                  return false;
+              }
+    };
+  </script>
+  <body oncontextmenu="return false;"> <!-- the value added to body tag disables right click -->
+    <script type="module" src="./finishedReview.js"></script>
+      <section id="loginpage">
+        <form id="sessionReview" class="session-review">
+          <p>Congratulations on finishing your review!</p>
+          <p class="deck-title" >Deck Title:</p>
+          <p id="deckID"></p>
+          <p class="total-reviewed">Total Reviewed:</p>
+          <p id="totalReviewed"></p>
+          <p class="num-correct">Correct:</p>
+          <p id="numCorrect"></p>
+          <p class="num-missed">Missed:</p>
+          <p id="numMissed"></p>
+          <!-- <p class="score">Accuracy Score: </p>
+          <p id="score"></p> -->
+          <div id="piechart_3d" class="pie-chart3D"></div>
+          <button type="button" id = "returnHome" class="returnHomeButton"></button>
+          <button type="button" id = "startNewReview" class="newReviewButton">Start Review</button>
+        </form>    
+      </section>
+  </body>
+</html>

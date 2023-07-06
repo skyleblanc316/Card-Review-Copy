@@ -1,0 +1,87 @@
+body {
+	background-color: #0041CA;
+	color: white;
+	text-align: center;
+	font-size: 1.2em;
+}
+
+form {
+	margin: 0 auto;
+	padding: 1em;
+	color: black;
+	text-align: auto;
+	max-width: 20em;
+	max-height: 10%;
+	background-color: white;
+	border-radius: 1em;            
+}
+
+.intro {
+	font-size: 0.8rem;
+	margin-top: 8em;
+	margin-bottom: 0;
+}
+
+.title {
+	font-size: 3rem;
+	margin-top: 0;
+	margin-bottom: 1em;
+}
+
+.sign-in-message {
+	margin-top: 1.5em;
+	margin-bottom: 2.5em;
+}
+
+.loginButton {
+	width: 10em;
+	font-weight: bold;
+	font-size: 0.9em;
+	background-color:#0041CA;
+	color: white;
+	border-radius: 1em;
+	border: #0041CA;
+	padding: 1em;
+	cursor: pointer;
+	transition: 0.35s;
+	box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.loginButton:hover {
+	opacity: 80%;
+	transform: translate(-2px, 2px);
+	box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.loginButton:active {
+	opacity: 50%;
+	transform: translate(-5px, 5px);
+	box-shadow: none;
+}
+
+.createAccount {
+	padding: 1em;  
+	margin: 1em;
+}
+
+.create-account-message:hover {
+	font-weight: bold;
+	font-size: 1.1rem;
+}
+
+.username-entry, .password-entry {
+	margin: 1em;
+}
+
+.username-label, .password-label {
+	font-weight: bold;
+}
+
+.username-input, .password-input {
+	border: 0.2em solid black;
+	border-radius: 0.5em;
+	height: 1.5em;
+	font-size: 0.9em;
+	font-style: arial;
+	padding-left: 0.3em;
+}

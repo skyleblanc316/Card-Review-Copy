@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Review Session</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"/>
+        <link rel="stylesheet" href="reviewSession.css">
+    </head>
+    <script>//security feature to disable debug menu hot keys
+      document.onkeydown = function(e) {//this funciton disables the pressing of specific keys based on their respective keycode
+        if ((e.ctrlKey && e.shiftKey && e.keyCode === 73) ||//disables 'ctrl + shift + I'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 67) ||  //disables 'ctrl + shift + c'
+              (e.ctrlKey && e.shiftKey && e.keyCode === 74) || //disables 'ctrl + shift + j'
+              e.keyCode === 123) {//disables f12
+                  return false;
+              }
+      };
+    </script>
+    <body oncontextmenu="return false;"> <!-- the value added to body tag disables right click -->
+      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.6.3/mousetrap.min.js"></script> -->
+        <script type="module" src="./reviewSession.js"></script>            
+        <section id = "reviewSession">
+          <div class="pause-button-div">
+            <button id = "pauseButton" class="pause-button" type = "button">
+              Pause Review
+            </button>
+          </div>
+          <h2 id = "questionHeader">Question</h2>
+          <div class="question-div">
+            <h4 id = "progress" class="progress"></h4>
+            <!-- <h4 id = "newOldCards" class="new-old-cards"></h4s> -->
+            <h4 id = "accuracy" class = "accuracy-style"></h4>
+          </div>      
+          <form id = question class="question"></form>
+        </section>
+        <h2 id = "answerHeading" class="answer-heading">Answer</h2>
+        <form id = "reviewAnswerSession" class="answer"></form>
+        <section id = "correctButtons"></section>
+    </body>
+</html>

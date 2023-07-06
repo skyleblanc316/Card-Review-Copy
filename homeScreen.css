@@ -1,0 +1,268 @@
+body {
+  background-color: white;
+  color: white;
+  text-align: left;
+}
+
+.appName {
+  background-color: #0041CA;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  font-size: 2rem;
+  text-align:left; 
+  color: white; 
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  padding: 0;
+}
+
+.acronym {
+  font-size: 0.5rem;
+}
+
+.logoutButton {
+  width: 5em;
+  background-color: #12a5da;
+  color: white;
+  border-radius: 12px;
+  border: #0041CA;
+  padding: 0.3em 0.6em 0.3em 0.6em;
+  float: right;
+  cursor: pointer;
+  font-size: 1.25rem;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.logoutButton:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.logoutButton:active {
+  transform: translate(-5px, 5px);
+  opacity: 0.5;
+  box-shadow: none;
+}
+
+.delete-area {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.8em;
+  color: black;
+  font-weight: bold;
+  padding-left: 0.9em;
+}
+
+section {
+  text-align: center;
+}
+
+.select-all {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1em;
+}
+
+.select-checkmark {
+  margin-left: 1em;
+  width: 1.5em;
+}
+
+.add-decks{
+  height: 25px;
+  width: 25px;
+  border-radius: 15%;
+  color: black;
+  background-color: white;
+}
+
+.delete-button {
+  margin-left: 1em;
+  color: white;
+  background-color: #ff4747;
+  border: none;
+  border-radius: 3em;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.delete-button:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.delete-button:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+}
+
+.deck-list {
+  list-style-type: none;
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.deck-line {
+  background-color: #12a5da;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-top: none;
+  border-radius: 30em;
+  margin-bottom: 1em;
+  box-shadow: -7px 7px 3px rgb(0, 0, 0, 0.2);
+}
+
+.deck-line:hover {
+  transform: translate(-3px, 3px);
+  box-shadow: -4px 4px 3px rgb(0, 0, 0, 0.2);
+}
+
+.checkbox-4-delete{
+  flex-grow: 1;
+  margin-right: 2em;
+  margin-left: 2em;
+  padding: 0;
+  cursor: pointer;
+}
+
+.deck-button {
+  flex-grow: 100;
+  margin: 0.5em;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 100em;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.start-review-button{
+  flex-grow: 1;
+  background-color: white;
+  color: white;
+  font-size: 1.6rem;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+  border: none;
+  cursor: pointer;
+  border-radius: 100em;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.add-decks {
+  border: none;
+  border-radius: 100em;
+  width: 2em;
+  height: 2em; 
+  font-size: 1.4rem;
+  padding: 0;
+  margin-top: 0.5em;
+  cursor: pointer;
+  background-color: #12a5da;
+  color: white;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  transition: 0.35s;
+}
+
+.add-decks:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.add-decks:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+}
+
+.deck-line, .logoutButton, .delete-button {
+  transition: 0.35s;
+}
+
+.create-deck-section {
+  display: none;
+  flex-direction: column;
+  justify-content:space-around;
+  background-color: #0041CA;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  width: 20em;
+  height: 8em;
+  border-radius: 1em;
+  padding: 1em;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.warning-message {
+  display:none;
+}
+
+.deck-name-label {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.deck-name-input {
+  border: 0.2em solid black;
+	border-radius: 0.5em;
+	height: 1.5em;
+	font-size: 0.9em;
+	font-style: arial;
+	padding-left: 0.3em;
+}
+
+.create-deck-button, .cancel-button {
+  padding: 0.5em 1em 0.5em 1em;
+  font-size: 1rem;
+  color: white;
+  border: none;
+	cursor: pointer;
+  width: 8em;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1em;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  transition: 0.35s;
+}
+
+.create-deck-button {
+  background-color: #0eaf29;
+  margin-right: 0.5em;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  margin-left: 0.5em;
+}
+
+.create-deck-button:hover, .cancel-button:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.create-deck-button:active, .cancel-button:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+}

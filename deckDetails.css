@@ -1,0 +1,507 @@
+/*@Justin
+Styling in
+A. deckDetails.JS are either
+    1. visibility
+    2. display
+    3. backgroundColor 
+    4. borderStyle = outSet when the mouse hovers over
+
+    I looked at how you changed reviewSession. 
+    Feel free to change 3
+    Hopefully, you won't change 1, 2, 4 but...
+
+B. deckDetails.HTML are
+    1. visibility
+    2. display
+
+    Hopefully, you won't change 1, 2 but...
+*/
+
+body {
+  background-color: white;
+  color: #0041CA;
+  text-align: left;
+}
+
+.appName {
+  background-color: #0041CA;
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  font-size: 2rem;
+  text-align:left; 
+  color: white; 
+  border-radius: 0.4em;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-bottom: 0.5em;
+}
+
+.title {
+  padding: 0;
+}
+
+.logoutButton, .start-review-button {
+  width: 5em;
+  background-color: #12a5da;
+  color: white;
+  border-radius: 12px;
+  border: #0041CA;
+  padding: 0.3em 0.6em 0.3em 0.6em;
+  float: right;
+  cursor: pointer;
+  font-size: 1.25rem;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  transition: 0.35s;
+}
+
+.logoutButton:hover, .start-review-button:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.logoutButton:active, .start-review-button:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+  opacity: 0.5;
+}
+
+.sidebar-and-content-area {
+  display: flex;
+  flex-direction: row;
+  height: 85vh;
+}
+
+.sidebar {
+  margin-right: 0.5em;
+  background-color: #f1f1f1;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.start-review-button {
+  width: 7em;
+  font-size: 1.5rem;
+  margin: 0.5em;
+}
+
+.sidebar a {
+  color: black;
+  padding: 1em;
+  text-decoration: none;
+} 
+
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+form {
+  margin: 0 auto;
+  color: black;
+  text-align: auto;
+  max-width: 275px;
+  max-height: 450px;
+  background-color: #0041CA;
+  border-radius: 10px;         
+}
+
+.deckTitle{
+  background-color: white;
+  color:#0041CA;
+  font-size: 30px;
+  text-align: left;
+}
+
+/*deckTitle and deck-title-style are DIFFERENT!*/
+.deck-title-style{
+  color:#0041CA
+}
+
+.contentAreaStyle{
+  float: right;
+  margin-left:1%; 
+  width:84%;          /*100% - sidebar:width - (margin-left of contentAreaStyle)*/
+}
+
+.container {
+  text-align: center;
+  padding: 0%;
+}
+
+.flashcards-tab {
+  position: relative;
+}
+
+.tooltiptext {
+  width: 20%;
+  background-color: rgb(85, 85, 85);
+  color: hsl(0, 0%, 100%);
+  border-radius: 6px;
+  padding: 0.8em 0.2em 0.8em 0.2em;
+  position: absolute;
+  width: 26em;
+  left: 110%;          /*1% more than the width of sidebar!*/
+  top: 0;         /*Approx. formula = appName:height + sideButton:height + a:height*2
+                      a:height is multiplied by 2 bc tab for summary AND Flashcard*/
+  font-size: 18px;
+  z-index: 1;
+}
+
+.closeToolTip {
+  cursor: pointer; 
+  margin-right: 2em;
+  margin-left: 1em;
+}
+
+.tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent #555 transparent transparent;
+}
+
+.delete-area {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  margin-top: 1em;
+}
+
+.select-all {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1em;
+  font-weight: bold;
+}
+
+.select-all-checkbox {
+  margin-left: 0.8em;
+  width: 1.5em;
+}
+
+.delete-button {
+  visibility: hidden;
+  margin-left: 1em;
+  color: white;
+  background-color: #ff4747;
+  border: none;
+  border-radius: 3em;
+  padding: 1em;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.delete-button:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.delete-button:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+}
+
+.delete-flashcard{
+  visibility: hidden;
+  width: 150;
+  color: black;
+  background-color: red;
+}
+
+.flashcard-list {
+  margin: 1em 0em 1em 0em;
+}
+
+.flashcard-line {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.flashcard-line-row-1{
+  color:#0041CA;
+  /* background-color: #ededed; */
+  font-size: 18px;
+  border-width: 1px;
+  list-style-type: none;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+.flashcard-line-row-1:hover {
+  opacity: 60%;
+}
+
+.checkbox-4-delete{
+  float: left;
+  width: 1.2em;
+}
+
+.edit-flashcard{
+  float:right;
+  color: #0041CA;
+  cursor: pointer;
+}
+
+.edit {
+  display: flex;
+  flex-direction: column;
+  background-color: #12a5da;
+  color: white;
+  padding: 1em;
+}
+
+.edit > div {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+.edit-flashcard:hover {
+  text-decoration: underline;
+}
+
+.question-label, .answer-label {
+  font-weight: bold;
+  margin-right: 1em;
+}
+
+.question-input {
+  margin-right: 0.7em;
+}
+
+.question-input, .answer-input {
+  border: 0.2em solid black;
+	border-radius: 0.5em;
+	height: 1.5em;
+	font-size: 0.9em;
+	font-style: arial;
+	padding-left: 0.3em;
+}
+
+.save-button, .edit-cancel-button {
+  padding: 0.5em 1em 0.5em 1em;
+  font-size: 1rem;
+  color: white;
+  border: none;
+	cursor: pointer;
+}
+
+.save-button, .edit-cancel-button {
+	border-radius: 1em;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  transition: 0.35s;
+}
+
+.save-button {
+  background-color: #0eaf29;
+  margin-right: 0.5em;
+}
+
+.edit-cancel-button {
+  background-color: #f44336;
+  margin-left: 0.5em;
+}
+
+.flashcard-question{
+  color: #0041CA;
+}
+
+.after-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 9px;
+}
+
+.add-flashcard {
+  border: none;
+  border-radius: 100em;
+  width: 2em;
+  height: 2em; 
+  font-size: 1.4rem;
+  padding: 0;
+  cursor: pointer;
+  background-color: #12a5da;
+  color: white;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  margin-right: 0.3em;
+  transition: 0.35s;
+}
+
+.add-flashcard:hover, .save-button:hover, .cancel-button:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.add-flashcard:active, .save-button:active, .cancel-button:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+}
+
+.new-card-window {
+  display: none;
+  flex-direction: column;
+  justify-content:space-around;
+  background-color: #12a5da;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10em;
+  width: 28em;
+  height: auto;
+  border-radius: 1em;
+  padding: 2em;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.new-card-window-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-label {
+  margin-top: 1em;
+}
+
+.card-front-input, .card-back-input {
+  border: 0.2em solid black;
+	border-radius: 0.5em;
+	height: 1.5em;
+  width: auto;
+	font-size: 0.9em;
+	font-style: arial;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.create-flashcard-button, .cancel-button {
+  padding: 0.5em 1em 0.5em 1em;
+  font-size: 1rem;
+  color: white;
+  border: none;
+	cursor: pointer;
+  width: 12em;
+  margin: auto;
+  margin-top: 2em;
+  border-radius: 1em;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  transition: 0.35s;
+}
+
+.create-flashcard-button {
+  background-color: #0eaf29;
+  margin-right: 0.5em;
+}
+
+.cancel-button {
+  background-color: #f44336;
+  margin-left: 0.5em;
+}
+
+.create-flashcard-button:hover, .cancel-button:hover, .edit-cancel-button:hover, 
+  .edit-settings-button:hover, .cancel-settings-button:hover, .save-settings-button:hover {
+  opacity: 0.8;
+  transform: translate(-2px, 2px);
+  box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.create-flashcard-button:active, .cancel-button:active, 
+  .edit-cancel-button:active, .button:active, 
+  .edit-settings-button:active, .cancel-settings-button:active,
+  .save-settings-button:active {
+  transform: translate(-5px, 5px);
+  box-shadow: none;
+}
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.save-settings-button, .cancel-settings-button, .edit-settings-button {
+  color: white;
+  border: none;
+  border-radius: 3em;
+  padding: 0.5em;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+  transition: 0.35s;
+  margin-top: 1em;
+}
+
+.cancel-settings-button, .save-settings-button {
+  display: none;
+  width: 5em;
+  text-align: center;
+  margin: 0.5em;
+}
+
+.save-and-cancel-buttons-row {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cancel-settings-button{
+  background-color: #f44336;
+}
+
+.save-settings-button {
+  background-color: #0eaf29;
+}
+
+.edit-settings-button {
+  background-color: #12a5da;
+  width: 10em;
+  margin: 1em;
+}
+
+.num-new-cards{
+  display: none;
+}
+
+.bar-chart{
+  width: 1000px;
+  height: 500px;
+}
+
+.settings-tab-content {
+  flex-direction: column;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.settings-tab-content input, .settings-tab-content select {
+  border: 0.2em solid black;
+	border-radius: 0.2em;
+	font-size: 0.9em;
+	font-style: arial;
+	padding-left: 0.3em;
+  margin-left: 0.8em;
+}
+
+.settings-tab-content > div, section {
+  margin: 0.5em;
+}
+
+.edit-max-level, .edit-new-cards {
+  width: 2em;
+}

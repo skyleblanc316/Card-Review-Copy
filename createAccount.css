@@ -1,0 +1,75 @@
+body {
+	background-color: #0041CA;
+	color: white;
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+.create-account-header {
+	margin-top: 3.5em;
+	margin-bottom: 2.5em;
+}
+
+.create-account-form {
+	margin: 0 auto;
+	color: black;
+	text-align: auto;
+	max-width: 25em;
+	max-height: 60em;
+	background-color: white;
+	border-radius: 10px;  
+	padding: 1em;          
+}
+
+.create-button {
+	width: 12em;
+	background-color:#0041CA;
+	color: white;
+	border-radius: 12px;
+	border: #0041CA;
+	padding: 0.8em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	cursor: pointer;
+	font-size: 1.1rem;
+	transition: 0.3s;
+	box-shadow: -5px 5px 3px rgb(0, 0, 0, 0.2);
+}
+
+.create-button:hover {
+	opacity: 80%;
+	transform: translate(-2px, 2px);
+	box-shadow: -3px 3px 3px rgb(0, 0, 0, 0.2);
+}
+
+.create-button:active {
+	opacity: 50%;
+	transform: translate(-5px, 5px);
+	box-shadow: none;
+}
+
+.important {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.username-entry {
+	margin-top: 1em;
+}
+
+.password-entry {
+	margin-bottom: 1em;
+}
+
+.username-label, .password-label {
+	font-weight: bold;
+}
+
+.username-input, .password-input {
+	border: 0.2em solid black;
+	border-radius: 0.5em;
+	height: 1.5em;
+	font-size: 0.9em;
+	font-style: arial;
+	padding-left: 0.3em;
+}
